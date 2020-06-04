@@ -25,11 +25,11 @@ RUN \
  mkdir -p \
 	/config && \
  if [ -z ${AC2MQTT_TAG+x} ]; then \
-	AC2MQTT_TAG=$(curl -sX GET https://api.github.com/repos/wjbeckett/broadlink_ac_mqtt/tags \
+	AC2MQTT_TAG=$(curl -sX GET https://api.github.com/repos/Backslashh/broadlink_ac_mqtt/tags \
 	| jq -r 'first(.[]) | .name'); \
  fi && \
  echo "found ${AC2MQTT_TAG}" && \
- git clone https://github.com/wjbeckett/broadlink_ac_mqtt.git /config && \
+ git clone https://github.com/Backslashh/broadlink_ac_mqtt.git /config && \
  cd /config && \
  git checkout ${AC2MQTT_TAG} && \
  cp -n sample_config.ym_ config.yml
