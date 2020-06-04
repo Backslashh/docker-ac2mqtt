@@ -1,4 +1,4 @@
-FROM lsiobase/python
+FROM lsiobase/python:3.11
 
 # set version label
 ARG AC2MQTT_TAG
