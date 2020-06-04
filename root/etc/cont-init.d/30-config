@@ -14,8 +14,6 @@
 #		mv "$i" /config/"$(basename "$i")" && \
 #		ln -s /config/"$(basename "$i")" "$i"
 #done
-rm -rf /config/*
-ln -s /app/ac2mqtt/* /config
 
 # function to randomly sample 5 files for their owner and only chown if not abc
 chowner () {
@@ -32,7 +30,7 @@ done
 # permissions
 echo "Setting permissions"
 abc_dirs=( \
-/config \
+/app/ac2mqtt \
 )
 for i in "${abc_dirs[@]}"; do
         if [ "$(ls -A ${i})" ]; then
