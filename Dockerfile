@@ -1,4 +1,4 @@
-FROM lsiobase/python:3.11
+FROM lsiobase/python
 
 # set version label
 ARG AC2MQTT_TAG
@@ -14,6 +14,7 @@ RUN \
     build-base \
 	python2-dev \
 	git \
+	jq \
 	py-pip && \
  echo "**** install pip pre-reqs ****" && \
  pip install --no-cache-dir \
