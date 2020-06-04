@@ -29,7 +29,7 @@ RUN \
 	| jq -r 'first(.[]) | .name'); \
  fi && \
  echo "found ${AC2MQTT_TAG}" && \
- git clone https://github.com/Backslashh/broadlink_ac_mqtt.git /config && \
+ git clone https://github.com/Backslashh/broadlink_ac_mqtt.git /app/ac2mqtt && \
  cd /app/ac2mqtt && \
  git checkout ${AC2MQTT_TAG} && \
  cp -n sample_config.ym_ config.yml
