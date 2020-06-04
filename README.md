@@ -19,9 +19,12 @@ services:
     hostname: ac2mqtt
     network_mode: host
     volumes:
-      - <path to data>:/config
+      - ${CONFIG}/ac2mqtt:/config/ac2mqtt/
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     restart: unless-stopped
-
 ```
 The container needs to use the host network to ensure it runs on the same subnet as your AC units.
 

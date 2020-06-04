@@ -15,6 +15,8 @@ for i in "${symlinks[@]}"; do
 		ln -s /config/"$(basename "$i")" "$i"
 done
 
+
+
 # function to randomly sample 5 files for their owner and only chown if not abc
 chowner () {
 files=(${1}/*)
