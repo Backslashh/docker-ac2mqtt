@@ -3,5 +3,4 @@
 umask 022
 
 exec \
-	s6-setuidgid abc python /config/monitor.py \
-	--datadir /config
+	s6-setuidgid abc python /config/monitor.py
