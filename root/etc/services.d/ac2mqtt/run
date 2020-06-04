@@ -3,4 +3,4 @@
 umask 022
 
 exec \
-	s6-setuidgid abc python /config/monitor.py
+	s6-setuidgid abc python /app/ac2mqtt/monitor.py

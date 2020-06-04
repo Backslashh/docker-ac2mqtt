@@ -23,14 +23,14 @@ RUN \
 	pycrypto && \
  echo "**** fetch ac2mqtt ****" && \
  mkdir -p \
-	/config && \
+	/app/ac2mqtt && \
  if [ -z ${AC2MQTT_TAG+x} ]; then \
 	AC2MQTT_TAG=$(curl -sX GET https://api.github.com/repos/Backslashh/broadlink_ac_mqtt/tags \
 	| jq -r 'first(.[]) | .name'); \
  fi && \
  echo "found ${AC2MQTT_TAG}" && \
  git clone https://github.com/Backslashh/broadlink_ac_mqtt.git /config && \
- cd /config && \
+ cd /app/ac2mqtt && \
  git checkout ${AC2MQTT_TAG} && \
  cp -n sample_config.ym_ config.yml
 

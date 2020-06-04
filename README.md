@@ -14,7 +14,7 @@ Compatible with docker-compose v2+ schemas.
 version: "2.1"
 services:
   ac2mqtt:
-    image: backslashh/ac2mqtt
+    image: backslashh/docker-ac2mqtt
     container_name: ac2mqtt
     hostname: ac2mqtt
     network_mode: host

@@ -1,5 +1,20 @@
 #!/usr/bin/with-contenv bash
 
+# create symlinks
+symlinks=( \
+/app/ac2mqtt
+)
+for i in "${symlinks[@]}"; do
+	[[ "$(basename "$i")" == "config.yml" && ! -L "$i" ]] && \
+		ln -s /config/"$(basename "$i")" "$i"
+	[[ -e "$i" && ! -L "$i" && -e /config/"$(basename "$i")" ]] && \
+		rm -Rf "$i" && \
+		ln -s /config/"$(basename "$i")" "$i"
+	[[ -e "$i" && ! -L "$i" ]] && \
+		mv "$i" /config/"$(basename "$i")" && \
+		ln -s /config/"$(basename "$i")" "$i"
+done
+
 # function to randomly sample 5 files for their owner and only chown if not abc
 chowner () {
 files=(${1}/*)
