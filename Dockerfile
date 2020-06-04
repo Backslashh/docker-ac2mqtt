@@ -12,6 +12,7 @@ RUN \
  apk add --no-cache --upgrade && \
  apk add --no-cache \
     build-base \
+	python2-dev \
 	git \
 	py-pip && \
  echo "**** install pip pre-reqs ****" && \
@@ -19,7 +20,7 @@ RUN \
 	paho-mqtt \
 	pyyaml \
 	pycrypto && \
- echo "**** fetch sickchill ****" && \
+ echo "**** fetch ac2mqtt ****" && \
  mkdir -p \
 	/config && \
  if [ -z ${AC2MQTT_TAG+x} ]; then \
