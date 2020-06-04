@@ -11,6 +11,7 @@ RUN \
  echo "**** install packages ****" && \
  apk add --no-cache --upgrade && \
  apk add --no-cache \
+    build-base \
 	git \
 	py-pip && \
  echo "**** install pip pre-reqs ****" && \
